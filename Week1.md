@@ -31,3 +31,15 @@
 ### Strings 
 * Strings usually use UTF-16 encoding
 * Functions like length can give surprising results on non-ASCII strings
+* **Non Values**
+  - Undefined - Usually implies not initialised ; Default unknown state 
+  - Null - Explicitly set to non-value
+  - May be used interchangibly in most places
+
+* Anonymous functions and IIFEs
+  - IIFE was used before let and const to create strict scoping  - Avoid using
+  - Immediately Invoked Function Expression
+  - When to use ?
+ * console.log(typeof(x))
+ * Functions can have objects within them
+ * 

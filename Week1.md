@@ -4,6 +4,8 @@
 ### Javascript
 * UTF 16 in Javascript - can use different scripts as variable names
 * console.log()
+  - by default last statement gets printed in colsole even if there is no console.log
+  - if there is no let/var/const present it will be printed in the console.
 * {} is a block 
 * let
 * const
@@ -27,7 +29,8 @@
   - Don't use coersion in production code - creates confusion
   - console.log('3' == 3) outputs true
   - Use Strict equality **===** to avoid coersion. Safer to use for comparisons.
-
+### Scoping
+* Hoisting - It is a Javascript mechanism where variables and function declarations are moved to the top of their scope before code execution.
 ### Strings 
 * Strings usually use UTF-16 encoding
 * Functions like length can give surprising results on non-ASCII strings

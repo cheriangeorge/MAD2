@@ -8,7 +8,7 @@
 * let
 * const
 * var - even if defined inside a block it is visible outside. The entire top-level script can see it.
-* let - Later versions of javascript brought it because var was difficult to scope. Allows more restrictive scoping.
+* let - Later versions of javascript brought it because var was difficult to scope. Allows more restrictive scoping. **ReferenceError** if we try to access a variable declared by let inside a block, outside the block.
 * const - works exactly like let - block level scope . Should be used in most places. Cannot be changed.
 * Avoid using var.
 * scope of a variable

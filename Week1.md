@@ -43,3 +43,9 @@
  * console.log(typeof(x))
  * Functions can have objects within them
  * 
+
+### DOM API
+* console.log
+  - it is very limited
+  - variants for error logging
+  - useful for limited form of debugging. Not for production.

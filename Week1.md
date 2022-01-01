@@ -22,3 +22,12 @@
 * Operators 
   - 3+4 
   - '3'+'4'
+  - '3' + 4 (coersion - converts 4 into a string)
+  - '3' * '4' - 12
+  - Don't use coersion in production code - creates confusion
+  - console.log('3' == 3) outputs true
+  - Use Strict equality **===** to avoid coersion. Safer to use for comparisons.
+
+### Strings 
+* Strings usually use UTF-16 encoding
+* Functions like length can give surprising results on non-ASCII strings

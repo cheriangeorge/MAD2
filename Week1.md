@@ -53,3 +53,27 @@
   - it is very limited
   - variants for error logging
   - useful for limited form of debugging. Not for production.
+
+* Backtick is below the tilda on the keyboard (` is not the same as ')
+### 'this' works differently within an arrow function
+
+```javascript
+
+const obj = {
+  name : 'Rohit',
+  arrowFunction : (x) => {
+    this.name = x;
+  },
+  normalFunction : function (x) {
+    this.name = x;
+  },
+}
+console.log(obj.name) // prints Rohit
+obj.arrowFunction('Mohit');
+console.log(obj.name) // prints Rohit
+obj.normalFunction('Mohit');
+console.log(obj.name) // prints Mohit
+
+// 'this' works differently within an arrow function
+
+```

@@ -17,6 +17,11 @@
   - Package browser and application together (VSCode - Electron)
   - Polyfills : libraries that emulate newer functionality for older browsers
   - Compilers: BabelJS - convert new code to older compatible versions
+* Javascript Engines
+  - **V8** from Google is the most used JavaScript engine
+  - **SpiderMonkey** is developed by Mozilla for use in Firefox 
+  - **JavaScriptCore** is Apple's engine for its Safari browser
+  - **Chakra** is the engine of the Internet Explorer and Edge browser.
 
 ### Features of Javascript
 * Highly tolerant of errors

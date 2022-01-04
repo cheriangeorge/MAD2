@@ -93,3 +93,18 @@ const timer = (time) => {
 }
 timer(5004) // Will display up to 8 in some cases Increase it by a few ms to display upto 10.
 ```
+
+### Hoisting of var,let and const
+```Javascript
+let a = 9;
+{
+  console.log(a);
+  // let a = 5; // gives ReferenceError 
+  // split into let a ; a =5
+  // let a gets 'hoisted' to the parent scope
+  // the default value becomes undefined
+  // var a = 5 // Does not give an error
+  // For var the variables will get initialised with undefined value after hoisting. For let and const, it does not get un-initialised.
+  a = 5 // prints 5 in the console
+}
+```

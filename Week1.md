@@ -1,6 +1,36 @@
-### ECMA script
-* Standard for Javascript
+## Week 1 Notes
 
+### Javascript History
+* Originally created in 1995 as scripting language for Netscape Navigator
+* Intended as “glue” language
+* Primarily meant to assist “applets” in Java - hence JavaScript
+* AJAX - Asynchronous Javascript and XML (Garrett 2005) - Google Maps, Google Suggest loads only what is needed.
+
+### ECMA script
+* Standard for Javascript - ECMA (European Computer Manufacturers Association) - standard 262
+* JAM Stack - Javascript APIs Markup
+* Called ECMAScript to avoid trademark issues with Java
+* Yearly releases since 2015 (ES 6)
+* ES 6 has features of modern languages - Like modules, scoping, class
+* What happens if browsers don't support these features 
+  - Ask user to upgrade
+  - Package browser and application together (VSCode - Electron)
+  - Polyfills : libraries that emulate newer functionality for older browsers
+  - Compilers: BabelJS - convert new code to older compatible versions
+
+### Features of Javascript
+* Highly tolerant of errors
+  - Debugging difficult
+  - Strict mode: “use strict”;
+* Ambiguous syntax variants
+  - Automatic semicolon insertion
+  - ?? Object literals vs Code blocks {}
+  - ?? Function: statement or expression? Impacts parsing
+* Limited IO support: errors “logged” to “console”
+* Closely integrates with presentation layer: DOM APIs
+* Asynchronous processing and the Event Loop
+* Need HTML file to load the JS as a script though NodeJS allows execution from command line
+* 
 ### Javascript
 * UTF 16 in Javascript - can use different scripts as variable names
 * console.log()

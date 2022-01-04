@@ -77,3 +77,19 @@ console.log(obj.name) // prints Mohit
 // 'this' works differently within an arrow function
 
 ```
+
+### Timeout depends on processor
+```Javascript
+const timer = (time) => {
+  let x = 1;
+  let handlar = setInterval(()=>{
+    console.log(2*x)
+    x++
+  }, 1000)
+
+  setTimeout(()=>{
+    clearInterval(handlar)
+  }, time)
+}
+timer(5004) // Will display up to 8 in some cases Increase it by a few ms to display upto 10.
+```

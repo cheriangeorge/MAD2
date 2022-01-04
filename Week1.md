@@ -108,3 +108,5 @@ let a = 9;
   a = 5 // prints 5 in the console
 }
 ```
+* var will be hoisted to global scope when declared
+* let and const will not be hoisted to global scope

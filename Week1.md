@@ -129,9 +129,9 @@ let add =
 * String .length .substring
 * Length of a string not clearly defined when it is in unicode
 * Template string
-  - contained within back ticks ` `
-  - let st = `${s} World!`
-  - console.log(`Fifteen is ${a + b} and not ${2 * a + b}.`);
+  - contained within back ticks <code>\` \`</code>
+  - <code>let st = \`${s} World!\`</code>
+  - <code>console.log(\`Fifteen is ${a + b} and not ${2 * a + b}.\`);</code>
 * Operators 
   - 3+4 
   - '3'+'4'

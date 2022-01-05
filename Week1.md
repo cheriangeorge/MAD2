@@ -29,8 +29,8 @@
   - Strict mode: “use strict”;
 * Ambiguous syntax variants
   - Automatic semicolon insertion
-  - ?? Object literals vs Code blocks {}
-  - ?? Function: statement or expression? Impacts parsing
+  - Object literals (`obj = {};`) vs Code blocks (`{obj = 1;}`)
+  - Function: statement or expression? Impacts parsing of variables inside the function.
 * Limited IO support: errors “logged” to “console”
 * Closely integrates with presentation layer: DOM APIs
 * Asynchronous processing and the Event Loop
@@ -42,7 +42,7 @@
   - Loosely structured 
 * Identifiers 
   - Reserved words (await, break, class etc...)
-  - Literals (values) : true, false, null
+  - Literals (values) : `true`, `false`, `null`
 * Statements and Expessions 
   - Statement is a piece of code that can be executed
   - Expression is code that can be excuted to get a value to be returned
@@ -54,12 +54,12 @@
   - Source code is expected to be in unicode. Most engines use UTF 16
   - Functions like length can give surpeising results on non-ASCII scripts
 * Non Values 
-  - undefined - usually implies not initialised and is the default unknown state
-  - null - explicitly set non-value
+  - `undefined` - usually implies not initialised and is the default unknown state
+  - `null` - explicitly set non-value
 * Operators and comparisons 
   - Addition, subtraction - numbers and strings
   - Coersion - convert to similar type where operation is defined 
-  - Comparison - == loose equality , ===  strict equality
+  - Comparison - `==` loose equality , `===`  strict equality
 * Variables and Scoping
   - let, const are used for declaring variables
   - Unlike Python, variables MUST be declared
@@ -68,10 +68,10 @@
   - const : declares an immutable object - Value cannot be changed once assigned - But only within scope
   - let: variable that can be updated - index variable in for loops
 * Control Flow
-  - Conditional execution - if, else
-  - Iteration - for, while
-  - Change in flow - break, continue
-  - Choice - switch
+  - Conditional execution - `if`, `else`
+  - Iteration - `for`, `while`
+  - Change in flow - `break`, `continue`
+  - Choice - `switch`
 * Functions
   - Reusable block of code
   - In javascript functions are themselves objects that can be assigned
@@ -79,8 +79,8 @@
 * Anonymous functions and IIFEs
   - Immediately Invoked Function Expression
   - IIFE was used before let and const to create strict scoping  - Avoid using
-  - let x = function () { return “hello”} // Anonymous bound
-  - (function () { return “hello” }()) // Declare and invoke
+  - `let x = function () { return “hello”} // Anonymous bound`
+  - `(function () { return “hello” }()) // Declare and invoke`
   - Avoid IIFEs in modern code - poor readability
 * console.log
   - it is very limited
@@ -114,15 +114,15 @@ let add =
 
 ### Javascript notes from AQs and Live sessions
 * UTF 16 in Javascript - can use different scripts as variable names
-* console.log()
-  - by default last statement gets printed in colsole even if there is no console.log
-  - if there is no let/var/const present it will be printed in the console.
-* {} is a block 
-* var - even if defined inside a block it is visible outside. The entire top-level script can see it.
-* let - Later versions of javascript brought it because var was difficult to scope. Allows more restrictive scoping. **ReferenceError** if we try to access a variable declared by let inside a block, outside the block.
+* `console.log()`
+  - by default last statement gets printed in console even if there is no console.log
+  - if there is no `let`/`var`/`const` present it will be printed in the console.
+* `{}` is a block 
+* `var` - even if defined inside a block it is visible outside. The entire top-level script can see it.
+* `let` - Later versions of javascript brought it because var was difficult to scope. Allows more restrictive scoping. **ReferenceError** if we try to access a variable declared by let inside a block, outside the block.
   - let allows you to declare variables that are limited to the scope of a block statement, or expression on which it is used, unlike the var keyword, which declares a variable globally, or locally to an entire function regardless of block scope. [Mozilla Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let)
-* const - works exactly like let - block level scope . Should be used in most places. Cannot be changed.
-* Avoid using var.
+* `const` - works exactly like `let` - block level scope . Should be used in most places. Cannot be changed.
+* Avoid using `var`.
 * scope of a variable
 * Namespaces to restrict how different names are seen to different parts of the code 
 * Zero indexing of strings and arrays
@@ -140,10 +140,10 @@ let add =
   - Don't use coersion in production code - creates confusion
   - console.log('3' == 3) outputs true
   - Use Strict equality **===** to avoid coersion. Safer to use for comparisons.
-* Backtick is below the tilda on the keyboard (` is not the same as ')
+* Backtick is below the tilda on the keyboard (\` is not the same as ')
 ### Scoping
 * Hoisting - It is a Javascript mechanism where variables and function declarations are moved to the top of their scope before code execution.
-### 'this' works differently within an arrow function
+### `this` works differently within an arrow function
 
 ```javascript
 
@@ -182,7 +182,7 @@ const timer = (time) => {
 timer(5004) // Will display up to 8 in some cases Increase it by a few ms to display upto 10.
 ```
 
-### Hoisting of var,let and const
+### Hoisting of `var`, `let` and `const`
 ```Javascript
 let a = 9;
 {

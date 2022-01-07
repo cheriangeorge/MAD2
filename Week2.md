@@ -85,3 +85,84 @@
     - constructor must explicitly call `super()`
     - Multiple inheritance or **Mixins**
       - Complex to implement - out of scope here
+
+### Asynchrony
+* Exploring
+  - Asynchronous calls
+  - Asynchronous Iteration
+  - Basic ideas of Promises
+    - async/await
+* Function calls
+  - Function is like a “branch”
+    - but must save present state so we can return
+  - Call stack:
+    - Keep track of chain of functions called up to now
+    - Pop back up out of stack
+  - Example :
+    - main() on stack - current - calls f()
+    - f() goes on stack - calls g()
+    - g() goes on stack - calls h()
+    - h() goes on stack - executes
+    - return from h -> pop into g
+    - return from g -> pop into f
+    - return from f -> pop into main
+* **Call Stack**
+   - [Explanatory video:](https://vimeo.com/96425312)
+   - [Visualizing the call stack:](http://latentflip.com/loupe/)
+* **Event Loop and Task Queue**
+   - Task Queue: store next task to execute
+      - Tasks are pushed into queue by events (clicks, input, network etc.)
+   - Event loop:
+      - Wait for call stack to become empty
+      - Pop task out of queue and push it onto stack, start executing
+   - Run-to-completion
+      - Guarantee from JavaScript runtime
+      - Each task will run to completion before next task is invoked
+* **Blocking the browser**
+  - [Blocking the Browser](https://exploringjs.com/impatient-js/ch_async-js.html#how-to-avoid-blocking-the-javascript-process)
+* **Why Callbacks?**
+  - Long running code
+    - Will block execution till it finishes!
+  - Push long running code into a separate “thread” or “task”
+    - Let main code proceed
+    - Call back when completed
+* **Example: reading files - synchronous**
+  ```javascript
+  const fs = require('fs')
+  try {
+    const data = fs.readFileSync('/Users/joe/test.txt', 'utf8')
+    console.log(data)
+  } catch (err) {
+    console.error(err)
+  }
+  ```
+* **Example: reading files - asynchronous**
+  ```javascript
+  const fs = require('fs')
+  
+  fs.readFile('/Users/joe/test.txt', 'utf8' , (err, data) => {
+    if (err) {
+      console.error(err)
+      return
+    }
+    console.log(data)
+  })
+  ```
+* **Asynchronous Code**
+  - Very powerful - allows JS to have high performance even though it is single threaded
+  - Can be difficult to comprehend
+    - Focus on using async libraries and functions before writing your own
+  - Promises, async function calls etc.
+    - Important and useful concepts
+    - Deferred for now
+### JSON
+* Explore
+  - Object notation - for serialization, communication
+  - Notation is frozen
+    - Means even problem cases will remain (trailing “,” etc could be useful but will not be used)
+  - Usage through JSON API
+* JSON API
+  - Global namespace object `JSON`
+  - Main methods:
+    - `JSON.stringify()`
+    - `JSON.parse()`

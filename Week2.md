@@ -43,12 +43,21 @@
   - Dynamically generate iterators
 
 ### Modularity 
-* Modules
+* **Modules** - Important from the point of view of reuability of code 
   - Collect related functions, objects, values together
   - “export” values for use by other scripts
   - “import” values from other scripts, packages
 * Ways of implementing
   - script - direct include script inside browser
+    - Example
+    ```html
+     <script type="module" src="modularity.js"></script> 
+    ```
+      - Module1.js exports const c=333333
+      - Modularity.js imports this c from Module1.js
+      - Can have aliases during export and during import 
+      - Even if you export a variable declared by `let` , it is treated as `const`
+      - It can be changed by a function in the exporting file.
   - CommonJS - introduced for server side modules
     - synchronous load: server blocks till module loaded
   - AMD - asynchronous module definition
@@ -57,6 +66,7 @@
     - ES6 Modules
       - Both servers and browsers
       - Asynchronous load
+      - Some old modules don't support ES6 Modules
 * npm
   - Node Package Manager
   - Node:

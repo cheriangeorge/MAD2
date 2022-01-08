@@ -143,8 +143,17 @@ let add =
 * Backtick is below the tilda on the keyboard (\` is not the same as ')
 ### Scoping
 * Hoisting - It is a Javascript mechanism where variables and function declarations are moved to the top of their scope before code execution.
+* `this` has different values depending on where it is used:
+  - In a method, `this` refers to the owner object.
+  - Alone, `this` refers to the global object.
+  - In a function, `this` refers to the global object.
+  - In a function, in strict mode, `this` is `undefined`.
+  - In an event, `this` refers to the element that received the event.
+ 
 ### `this` works differently within an arrow function
-
+  -  `this` refers to the window object in the global scope `console.log(this);`
+  -  An arrow function doesn't have `this` on its own. It inherits from the parent scope. 
+  -  `Any reference to arguments, super, this, or new.target within an ArrowFunction must resolve to a binding in a lexically enclosing environment. Typically this will be the Function Environment of an immediately enclosing function.` [ECMAScript 2015 Spec](http://www.ecma-international.org/ecma-262/6.0/#sec-arrow-function-definitions-runtime-semantics-evaluation) 
 ```javascript
 
 const obj = {

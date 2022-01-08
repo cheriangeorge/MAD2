@@ -154,6 +154,11 @@ let add =
   -  `this` refers to the window object in the global scope `console.log(this);`
   -  An arrow function doesn't have `this` on its own. It inherits from the parent scope. 
   -  `Any reference to arguments, super, this, or new.target within an ArrowFunction must resolve to a binding in a lexically enclosing environment. Typically this will be the Function Environment of an immediately enclosing function.` [ECMAScript 2015 Spec](http://www.ecma-international.org/ecma-262/6.0/#sec-arrow-function-definitions-runtime-semantics-evaluation) 
+  - In a method, `this` refers to the owner object.
+  - Alone, `this` refers to the global object.
+  - In a function, `this` refers to the global object.
+  - In a function, in strict mode, `this` is `undefined`.
+  - In an event, `this` refers to the element that received the event.
 ```javascript
 
 const obj = {

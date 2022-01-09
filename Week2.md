@@ -176,3 +176,7 @@
   - Main methods:
     - `JSON.stringify()`
     - `JSON.parse()`
+
+
+### Assignments
+* [GA2 replit](https://replit.com/@constitution/MAD2Week2#index.js)

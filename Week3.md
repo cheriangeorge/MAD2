@@ -78,6 +78,9 @@
 ### Application and UI management
 * HTTP is stateless
   - There are other protocols are stateful. The protocol itself maintains some extra information between the client and the server
+  - Stateless protocols is useful when there are unreliable connections and devices
+  - If there is stateful protocol this would become more complicated with too much overhead.
+  - Maintianing state for too many people is not worth it . Look for alternative ways of maintianing state.
 * How to convey state between client and server?
   - Client maintains state - sends requests to server for specific items
   - Server maintains state - only specific requests allowed to client
@@ -88,6 +91,40 @@
 * Who determines the play ?
 * How should user input be collected and processed ?
 
+### Four different implementations of TIC TAK TOE
 
+``` python
+from flask import Flask, render_template,redirect
+BOARD = [0] * 9 # 1 D representation of the Board
+NEXT = 1        # 1 =X , -1 = O 
+
+app = flask (__name__,
+             static_folder='assets',
+             template_folder = "templates")
+@app.route('/')
+def homepage():
+  return render_template("tic.html",board=BOARD,next=NEXT)
+
+def checkstate(board):
+  
+
+@app.route('/set/<int:i>')
+def setvalue(i):
+  global BOARD,NEXT
+  BOARD[i] = NEXT
+  NEXT = -NEXT
+  r = checkstate(BOARD)
+  if r == 0:
+    return redirect('/')
+  else: 
+    return render_template("end.html",winner=r,board=BOARD,next=NEXT)
+
+@app.route('/new')    
+def newgame()    
+
+app.run()
+```
+* BOARD and NEXT indicated the cmplete state of the sysytem
+* 
 
 

@@ -65,3 +65,20 @@
   - Shopping cart, user preferences, theme
   - Followed news items , recommendations
   - Dashboard displays
+
+### UI State (Ephemeral State)
+* UI 
+ - Part of application actually seen / interacted with
+ - Ephemeral - Lasting for a very short time (From flutter)
+
+* Examples :
+  - Loading icons
+  - Currently selected tab in multi-tab document / page
+
+### Application and UI management
+* HTTP is stateless
+  - There are other protocols are stateful. The protocol itself maintains some extra information between the client and the server
+* How to convey state between client and server?
+  - Client maintains state - sends requests to server for specific items
+  - Server maintains state - only specific requests allowed to client
+

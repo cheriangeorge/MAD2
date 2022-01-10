@@ -95,7 +95,9 @@ ___
 
 ### Four different implementations of Tic - Tac - Toe
 
+
 ### Python Flask
+###### app.py
 ``` python
 from flask import Flask, render_template,redirect
 BOARD = [0] * 9 # 1 D representation of the Board
@@ -147,6 +149,12 @@ app.run()
   - By maintaining the state there is no smart functionality
   - Everything is maintained at the server
 * Somebody else openng the page from another browser sees the game in progress
+
+###### tic.html
+
+```html
+
+```
 
 ___
 

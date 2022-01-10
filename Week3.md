@@ -81,4 +81,13 @@
 * How to convey state between client and server?
   - Client maintains state - sends requests to server for specific items
   - Server maintains state - only specific requests allowed to client
+* In actual frontends you are trying to do something inbetween these
+
+### Example : Tic - Tac - Toe
+* What to display on the screen ?
+* Who determines the play ?
+* How should user input be collected and processed ?
+
+
+
 

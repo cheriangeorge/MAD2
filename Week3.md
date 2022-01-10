@@ -166,6 +166,10 @@ function i2c(i)
 
 * Some extra libraries on top of javascript
 * Cleaner interface
+* Elegance of vue comes when you start reusing components.
+* chess.com is built using vuejs.
+* When the web was dealing only with documents, reactivity wasn't required
+* 
 
 ### Alternate Vue Implementation without table, using css flex
 
@@ -245,3 +249,7 @@ var app = new Vue(
 )
 
 ```
+
+##### Two way binding for v-model in vue.js
+
+* The v-model directive updates the template whenever the model changes and updates data model whenever the template changes.

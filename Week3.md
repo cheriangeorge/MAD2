@@ -91,8 +91,9 @@
 * Who determines the play ?
 * How should user input be collected and processed ?
 
-### Four different implementations of TIC TAK TOE
+### Four different implementations of Tic - Tac - Toe
 
+### Python Flask
 ``` python
 from flask import Flask, render_template,redirect
 BOARD = [0] * 9 # 1 D representation of the Board
@@ -125,6 +126,122 @@ def newgame()
 app.run()
 ```
 * BOARD and NEXT indicated the cmplete state of the sysytem
-* 
+  - By maintaining the state there is no smart functionality
+  - Everything is maintained at the server
+* Somebody else openng the page from another browser sees the game in progress
 
 
+### Javascript Implementation
+
+```javascript
+let board = [0,0,0,0,0,0,0,0,0];
+let next = 1;
+let gState = 0; // Game in progress
+
+// Helper to convert number to character
+function i2c(i)
+```
+
+
+### Vue Implementation
+
+```html
+
+```
+
+- the `tic` tag is a component - a custom html tag - it has a custom property which is passed in as props 
+- 
+
+```javascript
+
+```
+
+- Line 16 : new vue app. Vue is a class 
+- el associates it with the element that has id app
+- vue is looking for any changes in variables (any time a variable changes something needs to be updated)
+- for arrays this is different
+- computed parameters headmsg and 
+- vue does a dataflow analysis and figures out under what conditions headmsg should change
+- vue makes sure that the functions get called when required - this is where declerative programming has come in to the picture
+
+* Some extra libraries on top of javascript
+* Cleaner interface
+
+### Alternate Vue Implementation without table, using css flex
+
+```html
+
+```
+
+```javascript
+
+```
+___
+
+### Screencast 3.1 Code
+##### application.html
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello World</title>
+    <!-- development version, includes helpful console warnings -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <p>{{ message }}</p>
+        Your Name : <input type="text" v-model="visitor_name"/>
+        <p>Two way binding by v-model.</p>
+        <p v-if="count == 0"> No replies yet </p>
+        <p v-else-if="count > 5"> You are very popular</p>
+        <p v-else>Number of repliess : {{ count }}</p>
+        
+        <button v-on:click="sayHi">Say Hi</button>
+        <p>{{ visitor_name }} said hi.</p>
+        <ul>
+            <li v-for="name in visitors">{{ name }}</li>
+        </ul>
+    </div>
+
+</body>
+<script type="text/javascript" src="application.js"></script>
+</html>
+```
+
+##### application.js
+
+```javascript
+//let message = "Hello World"
+
+//document.getElementById("app").innerHTML = message ; 
+var app = new Vue(
+    {
+        el : "#app",
+        data : {
+            message : "hello world",
+            //count : 0,
+            visitor_name : "",
+            visitors : []
+        },
+        methods : {
+            sayHi: function (){
+                this.message = "Bye";
+                //this.count +=1;
+                this.visitors.push(this.visitor_name);
+                this.visitor_name = "";
+            }
+        },
+        computed : {
+            count : function () {
+                return this.visitors.length;
+            }
+        }
+    }
+)
+
+```

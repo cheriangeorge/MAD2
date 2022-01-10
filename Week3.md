@@ -5,7 +5,7 @@
 * User Facing Part of an App
   - User Interface (UI) and User Experience (UX)
   - One of the most powerful User interfaces in existance is the Command Line (Terminal) 
-    - Almost noone except a die hard Linux user is going to say it is good.
+    - Almost no one except a die hard Linux user is going to say it is good.
     - It is efficient and elegant
 * Requirements
   - Avoid complex logic - Application logic should be in backend
@@ -28,3 +28,40 @@
 * Declarative - specify desired result
   - Compiler / Interpreter knows how to achieve result
   - Function integration automated
+* There are different types of problems where each style of programming style makes more sense.
+ 
+### UI = f(state)
+  - UI The layout of the screen
+  - f = Your build methods
+  - The application state. 
+    - Once you have the application state you apply a set of functions on it and that results in what you see on the screen.
+    - Credit : **Flutter** documentation "Start thinking declaritively"
+      - A google framework based on the _____ black language
+
+### State
+
+* Internal details of the system : memory
+* Reproducibility 
+  - Given a "system state", the system should always respond the same way to input. 
+* Complexity 
+  - Any non-trivial application needs internal state. 
+
+### System State
+
+* Complete database of amazon.com , flipkart.com
+  - Stocks of available items, prices, logged in / registered users etc.
+* All news articles ever published on toi.com hindu.com bbc.com
+* All students , courses, marks, certificates etc for NPTEL
+
+* #### Typically huge but comprehensive
+  - Completely independent of the user interface / frontend.
+
+### Application State
+
+* Application
+  - System as seen by an individual user / session
+  - Includes interactivity, session management
+* Examples
+  - Shopping cart, user preferences, theme
+  - Followed news items , recommendations
+  - Dashboard displays

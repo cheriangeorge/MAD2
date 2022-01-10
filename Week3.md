@@ -18,7 +18,7 @@
   - Aesthetically pleaseing
   - Responsive - no lag / latency
   - Adaptive - different screens
-    - in CSS responsive is sometimes used to mean adaptive
+    - in CSS 'responsive' is sometimes used to mean 'adaptive'
 
 ### Programming Styles
 
@@ -36,7 +36,7 @@
   - The application state. 
     - Once you have the application state you apply a set of functions on it and that results in what you see on the screen.
     - Credit : **Flutter** documentation "Start thinking declaritively"
-      - A google framework based on the _____ black language
+      - Flutter is a UI software development kit created by Google. It is used to develop cross platform applications. Dart is the programming language used to code Flutter apps.
 
 ### State
 
@@ -145,7 +145,7 @@ def newgame():
   
 app.run()
 ```
-* BOARD and NEXT indicated the cmplete state of the sysytem
+* BOARD and NEXT indicate the complete state of the sysytem
   - By maintaining the state there is no smart functionality
   - Everything is maintained at the server
 * Somebody else openng the page from another browser sees the game in progress
@@ -153,7 +153,48 @@ app.run()
 ###### tic.html
 
 ```html
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tic-Tac-Toe</title>
+  <style>
+    .b {
+      background-color: lightgrey;
+    }
+    .x .o {
+      background-color: white;
+    }
+  </style>
+</head>
+<body>
+  <h1>Next move: <img src="assets/{{['o','b','x'][next+1]}}.png"></h1>
+  <table border="2px">
+    {% for i in range(9) %}
+      {% set r = i//3 %}
+      {% set c = i%3 %}
+      {% set e = board[i] %}
+      {% set spclass = ['o','b','x'][e+1] %}
+      {% if c == 0%}
+    <tr>
+      {% endif %}
+      <td class="{{spclass}}">
+        {% if e==0 %}
+        <a href = "set/{{i}}">
+        {% endif %}
+        <img src="assets/{{spclass}}.png">
+        {% if e==0 %}
+        </a>
+        {% endif %}
+      </td>
+      {% if c==2 %}
+    </tr>
+      {% endif %}
+      {% endfor %}
+  </table>
+</body>
+</html>
 ```
 
 ___

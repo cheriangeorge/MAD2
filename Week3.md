@@ -91,6 +91,8 @@
 * Who determines the play ?
 * How should user input be collected and processed ?
 
+___
+
 ### Four different implementations of Tic - Tac - Toe
 
 ### Python Flask
@@ -107,6 +109,18 @@ def homepage():
   return render_template("tic.html",board=BOARD,next=NEXT)
 
 def checkstate(board):
+  patts = [(0,1,2),(3,4,5),(6,7,8),(0,3,6),(1,4,7),(2,5,8),(0,4,8),(2,4,6)]
+  for p in patts:
+    t = sum([board[x] for x in p])
+    if (t==3):
+      return 1 # X won
+    elif (t==-3):
+      return -1 # O won
+  r = 0 
+  for i in board:
+    if i == 0:
+      return 0 # Game still in progress
+  return 2     # Draw
   
 
 @app.route('/set/<int:i>')
@@ -121,8 +135,12 @@ def setvalue(i):
     return render_template("end.html",winner=r,board=BOARD,next=NEXT)
 
 @app.route('/new')    
-def newgame()    
-
+def newgame():
+  global BOARD, NEXT
+  BOARD = [0] * 9
+  NEXT = 1
+  return redirect('/')
+  
 app.run()
 ```
 * BOARD and NEXT indicated the cmplete state of the sysytem
@@ -130,6 +148,7 @@ app.run()
   - Everything is maintained at the server
 * Somebody else openng the page from another browser sees the game in progress
 
+___
 
 ### Javascript Implementation
 
@@ -142,6 +161,7 @@ let gState = 0; // Game in progress
 function i2c(i)
 ```
 
+___
 
 ### Vue Implementation
 
@@ -170,6 +190,9 @@ function i2c(i)
 * chess.com is built using vuejs.
 * When the web was dealing only with documents, reactivity wasn't required
 * 
+
+___
+
 
 ### Alternate Vue Implementation without table, using css flex
 

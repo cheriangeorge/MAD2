@@ -325,3 +325,6 @@ var app = new Vue(
 ##### Two way binding for v-model in vue.js
 
 * The v-model directive updates the template whenever the model changes and updates data model whenever the template changes.
+
+##### Week 3 REPLIT
+[Code With us - Asynchronicity in Javascript](https://replit.com/@constitution/MAD2Week3#script2.js)

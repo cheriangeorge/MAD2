@@ -133,8 +133,49 @@
   - When possible, use computed property instead of watcher
     - more declerative
     - caching
- #### Components
+#### Components
+* Reuse
+  - DRY Principle - Don't repeat yourself
+  - Examples :
+    - News items on IITM front page
+    - "People also bought" items on Amazon
+  - Same structure, formatting repeated
+  - Refactor
+    - Change code without changing functionality
+    - Mainly for readability and maintainability - not functionality
+* Vue Component Structure
+  - Properties
+    - passed down from parent - customise for each instance
+  - Data 
+    - individual data of the present instance
+    - also its own watchers, computed properties etc.
+  - Template
+    - how to render
+    - render functions possible - see docs
+    - Slots
+* Templates
+  - {{}} format - similar to Jinja
+  - Safety features:
+    - will not interpolate text into tags - why?
+    - errors on unclosed divs etc..
+  - More complex render functions possible 
+    - JSX : mix JS + HTML  -similar to React 
+* Slot 
+  - Main elelment of a text 
+    - Use like regular tag
+  - Properties can be defined in tag
+  - [Picsure](https://picsure.photos/150)
 
+#### Reactivity
+* How does Reactivity work ?
+  - Need to track when data is 
+    - accessed
+    - modified
+  - Add methods to objects
+    - everything in JS is an object
+  - `Object.defineProperty()`
+    - [Object.defineProperty()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty)
+    - [Your guide to reactivity in Vue.js](https://blog.logrocket.com/your-guide-to-reactivity-in-vue-js/)
 ___
 
 ### Live session video

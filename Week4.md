@@ -83,7 +83,58 @@
   - Model
     - The data of the application
     - Usually stored on server in database
-  - 
+  - View
+    - Displayed to end user (or to non-human consumer)
+    - Rendering of data
+  - Problem : sometimes *view* needs more info than needed for model, or perhaps there is derived information.
+* Example 
+  - Form with username, password, repeat_password
+    - Should repeat_password be in model ? Where should it be stored ? How should it be used ?
+  - Page with top comments, top posts
+    - Should top_comments, top_posts be in the model?
+    - Should they be derived from other data?
+    - What does the displayed information correspond to?
+  - [What is Model and ViewModel in MVC Pattern?](https://www.c-sharpcorner.com/UploadFile/abhikumarvatsa/what-is-model-and-viewmodel-in-mvc-pattern/) 
+* ViewModel
+  - Yet another "Pattern"
+  - Create model constructs with additional data / derived data
+  - "bind" to view 
+    - Auto update view on change in data
+    - (possibly) auto update data when changed in view
+  - Why ?
+    - cleaner code
+* Vue - VueModel - Vue Instance
+  - "Although not strictly associated with MVVM pattern, Vue's design was partly inspired by it." - Vue Documentation
+    - Data binding
+      - data of vue instance is the "instance data"
+    - Update to data will be reflected in the view
+    - Update in the view can change the data 
+* MVC vs MVVM
+  - NOT either-MVC-or-MVVM
+  - Controller
+    - Convey actions to model
+    - Call appropriate view based on inputs and model
+  - ViewModel:
+    - Create framework for data binding
+    - Can still use controllers to invoke actions
+* Computed Properties 
+  - Often need to work with derived data
+    - Take original data and modify it according to some function/logic
+    - Examples : Boolean on-off on styles depending on values in data; navifation links depending on history
+  - Each time source data changes update the derived data
+  - Computed properties 
+    - Auto update
+    - Cached based on their relative dependencies 
+  - Computed "setter" also possible - see documentation for example
+* Watcher
+  - Explicitly look for changes
+  - Can be used for imperative code
+  - For more complex logic than just updating a property
+  - When possible, use computed property instead of watcher
+    - more declerative
+    - caching
+ #### Components
+
 ___
 
 ### Live session video

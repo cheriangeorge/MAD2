@@ -77,7 +77,13 @@
 #### Demo
 * Javascript essentially treats a function and variable as the same 
 
+#### Vue Model
 
+* Model / View
+  - Model
+    - The data of the application
+    - Usually stored on server in database
+  - 
 ___
 
 ### Live session video

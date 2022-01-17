@@ -76,4 +76,9 @@
 
 #### Demo
 * Javascript essentially treats a function and variable as the same 
-* 
+
+
+___
+
+### Live session video
+[Week 4 Live session on Monday 17th Jan 2022](https://www.youtube.com/watch?v=faRuwqZV--w)

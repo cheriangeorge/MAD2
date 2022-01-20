@@ -140,6 +140,7 @@
   - When possible, use computed property instead of watcher
     - more *declerative*
     - caching
+  - [Discourse explanation on difference between Watch and Compute](https://discourse.onlinedegree.iitm.ac.in/t/vue-watchers/28723)
 #### Components
 * Reuse
   - DRY Principle - Don't repeat yourself

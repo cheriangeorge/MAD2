@@ -2,14 +2,14 @@
 
 #### Using APIs 
 * Separation of concerns
-  - Backend : manage data models
-  - Frontend : manage UI (The part closer to the user)
+  - Backend: manage data models
+  - Frontend: manage UI (The part closer to the user)
   - A clean interaction mechanism to separate the two
 * Requirements of such a system
   - System level design should have a separate backend and front end 
     - Backend should never know what the UI looks like (Separation of concerns for abstraction)
-    - No direct calls to HTML tempeplate rendering etc.
-    - Data output only in neutral formats : JSON is preferred nowadays, but not essential
+    - No direct calls to HTML template rendering etc.
+    - Data output only in neutral formats: JSON is preferred nowadays, but not essential
     - Data input through form data or URLs
   - Fetch Mechanism
     - How to retreive data from a backend?
@@ -25,7 +25,7 @@
   - Asynchronous operation
     - Start fetch in background.
     - Wait for results, update.
-  - How ? (A lot of the power of javascript comes from answering this question.)
+  - How? (A lot of the power of JavaScript comes from answering this question.)
 #### Async 
 * Events and callbacks
 * Promises 
@@ -39,13 +39,13 @@
     - JS is a single threaded system - browser will hang
   - Instead start `doSomething()` and tell it to **call us back when done** 
 * ##### Events
-  - `button onclick` handler ? 
+  - `button onclick` handler? 
   - This is a function
     - But never explicitely called - not imperitive code
     - How to specify when to call
   - Event callback
-    - Specify to DOM : on particular event, invoke function
-* ##### JS : Event loops and call stacks
+    - Specify to DOM: on particular event, invoke function
+* ##### JS: Event loops and call stacks
   - Call Stack
     - Execute all operations (function calls etc) in present scope in sequence
     - Go check "callback queue" to see if any new functions to be called 
@@ -59,7 +59,7 @@
           - **'Run to completion' once the program enters the call stack** - Nothing else can come and run on the call stack. Nothing can stop it and run in another thread. It can stay over there and block your program. Be carefult about having things that terminate quickly.
 
 * ##### Callbacks
-  - Higher order function call other functions depending on some conditions
+  - Higher order functions call other functions depending on some conditions
   - Example
       ```javascript
       doSomething (successCB,failureCB) {
@@ -69,7 +69,7 @@
       }
       
       ```
-* ##### Promises : alternative syntax ?
+* ##### Promises: alternative syntax?
   - `doSomething().then(successCB,failureCB);`
   - [Mozilla Using Promises](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises)
     - More than just syntax
@@ -80,17 +80,17 @@
   - Concurrent: multiple operations can be in process at the same time 
     - But maybe they only execute in time-multiplexed manner and not literally at the same time instant
     - More important from the POV of the user.
-  - Parallel : multiple concurrent operations are actually physically executing at the same time 
+  - Parallel: multiple concurrent operations are actually physically executing at the same time 
     - Can happen only if you have multiple processors present.
   - Parallel requires concurrent; not vice-versa
   - Async operations bring in a notion of concurrency - whether this is actually implemented in parallel or time multiplexed is up to run time 
   - Web workers, timers - parallel execution. 
-* ##### Async op : fetch
+* ##### Async op: fetch
   - Fetching a URL must be async
     - no guarantee on network speeds
     - Server load may result in slow responses
     - Broken connection or other network failures can happen 
-  - JS API since ES6 : `fetch()`
+  - JS API since ES6: `fetch()`
     - implemented using `Promise`
     - Built into most browsers - "Polyfills" available for backward compatibility.
   - [Mozilla Using Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch) 
@@ -126,9 +126,9 @@
   ```
 ##### Points
 * if `await` is not used `async update()` is not required (when using chained `then`)
-* partial data returned on `fectch` can show how much of a file is downloaded (progress)
-* AJAX (XMLHttpRequest) is an old API, fetch is a new API with lots of features
-* future in DART is like fetch in javascript
+* partial data returned on `fetch` can show how much of a file is downloaded (progress)
+* AJAX (`XMLHttpRequest`) is an old API, fetch is a new API with lots of features
+* future in Dart is like fetch in JavaScript
 
 ### Live session video
 [Week 5 Live session on Monday 24th Jan 2022](https://www.youtube.com/watch?v=1AeOkI5CzSs)

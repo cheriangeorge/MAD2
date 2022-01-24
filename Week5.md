@@ -124,6 +124,11 @@
   ```javascript
   cc
   ```
+##### Points
+* if `await` is not used `async update()` is not required (when using chained `then`)
+* partial data returned on `fectch` can show how much of a file is downloaded (progress)
+* AJAX (XMLHttpRequest) is an old API, fetch is a new API with lots of features
+* future in DART is like fetch in javascript
 
 ### Live session video
 [Week 5 Live session on Monday 24th Jan 2022](https://www.youtube.com/watch?v=1AeOkI5CzSs)

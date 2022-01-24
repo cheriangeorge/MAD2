@@ -106,21 +106,24 @@
   - Many public and useful APIs already exist
   - Significant development possible with just API access
   - Examples:
-    - [Example GitHub APIs](api.github.com)
-    - [Example Mediawiki APIs](https://www.mediawiki.org/wiki/API:Main_page)
+    - [GitHub APIs](https://api.github.com/)
+    - [Mediawiki APIs](https://www.mediawiki.org/wiki/API:Main_page)
     - [Open Weather Map](https://openweathermap.org/api)
       - `curl 'api.openweathermap.org/data/2.5/weather?q=chennai&appid=524e66603815fe9f71171c6c7fde1e86'`
-    - Hackernews
+    - [Hackernews](https://hacker-news.firebaseio.com/v0/item/8863.json?print=pretty)
 ##### Code Example
-  - html
+  - index1.html
   ```html
   cc
   ```
-  - vue js app
+  - weather1.js
   ```javascript
   cc
   ```
-
+  - weather.js
+  ```javascript
+  cc
+  ```
 
 ### Live session video
 [Week 5 Live session on Monday 24th Jan 2022](https://www.youtube.com/watch?v=1AeOkI5CzSs)

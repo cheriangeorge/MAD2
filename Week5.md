@@ -85,6 +85,41 @@
   - Parallel requires concurrent; not vice-versa
   - Async operations bring in a notion of concurrency - whether this is actually implemented in parallel or time multiplexed is up to run time 
   - Web workers, timers - parallel execution. 
+* ##### Async op : fetch
+  - Fetching a URL must be async
+    - no guarantee on network speeds
+    - Server load may result in slow responses
+    - Broken connection or other network failures can happen 
+  - JS API since ES6 : `fetch()`
+    - implemented using `Promise`
+    - Built into most browsers - "Polyfills" available for backward compatibility.
+  - [Mozilla Using Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch) 
+* ##### Axios
+  - Custom API library with smilar functionality to fetch
+    - can be used on most browsers - provides good backward compatibility
+    - also works on nodejs
+  - [Axios or Fetch API](https://blog.logrocket.com/axios-or-fetch-api/)
+
+#### Existing APIs we can use
+
+* ##### Building a frontend 
+  - Many public and useful APIs already exist
+  - Significant development possible with just API access
+  - Examples:
+    - [Example GitHub APIs](api.github.com)
+    - [Example Mediawiki APIs](https://www.mediawiki.org/wiki/API:Main_page)
+    - [Open Weather Map](https://openweathermap.org/api)
+      - `curl 'api.openweathermap.org/data/2.5/weather?q=chennai&appid=524e66603815fe9f71171c6c7fde1e86'`
+    - Hackernews
+##### Code Example
+  - html
+  ```html
+  cc
+  ```
+  - vue js app
+  ```javascript
+  cc
+  ```
 
 
 ### Live session video

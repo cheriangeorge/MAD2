@@ -9,7 +9,7 @@
   - System level design should have a separate backend and front end 
     - Backend should never know what the UI looks like (Separation of concerns for abstraction)
     - No direct calls to HTML template rendering etc.
-    - Data output only in neutral formats: JSON is preferred nowadays, but not essential
+    - Data output only in neutral formats: JSON is preferred nowadays, but not essential (XML is another)
     - Data input through form data or URLs
   - Fetch Mechanism
     - How to retreive data from a backend?
@@ -20,39 +20,41 @@
 * Fetch  - Asynchronous
   - Fetching data depends on factors outside server control
     - Latency to backend (network disruption)
-    - Network load, disruptions (DNS etc)
+    - Network load, disruptions (DNS, etc.)
   - Should not make browser hang if correct data is not available 
   - Asynchronous operation
     - Start fetch in background.
     - Wait for results, update.
   - How? (A lot of the power of JavaScript comes from answering this question.)
 #### Async 
-* Events and callbacks
-* Promises 
-* fetch API
-* axios
+1. Events and Callbacks
+2. Promises 
+3. `fetch` API
+4. Axios
 
-* ##### Callbacks
+* ##### Callback Example
   - Function `doSomething` takes a long time to execute
   - `let result = doSomething()`
-    - entire JS interpreter blocks till result is obtained (10^7 clock cycles till a result is obtained)
+    - entire JS interpreter blocks till result is obtained (10<sup>7</sup> clock cycles till a result is obtained)
     - JS is a single threaded system - browser will hang
   - Instead start `doSomething()` and tell it to **call us back when done** 
 * ##### Events
   - `button onclick` handler? 
   - This is a function
-    - But never explicitely called - not imperitive code
+    - But never explicitely called - not imperative code
     - How to specify when to call
   - Event callback
     - Specify to DOM: on particular event, invoke function
 * ##### JS: Event loops and call stacks
   - Call Stack
-    - Execute all operations (function calls etc) in present scope in sequence
+    - Execute all operations (function calls, etc.) in present scope in sequence
     - Go check "callback queue" to see if any new functions to be called 
       - if so execute them
-      - keep checking ... events can be pushed to queue later by timeouts etc.
+      - keep checking ... events can be pushed to queue later by timeouts, etc.
     - Reference material 
       - [Web API Event loops](https://html.spec.whatwg.org/multipage/webappapis.html#event-loops)
+        - Each agent has an associated event loop, which is unique to that agent.
+        - An event loop has one or more task queues. A task queue is a set of tasks.
       - [How JavaScript works: Event loop and the rise of Async programming + 5 ways to better coding with async/await](https://blog.sessionstack.com/how-javascript-works-event-loop-and-the-rise-of-async-programming-5-ways-to-better-coding-with-2f077c4438b5)
           - how `setTimeout` works with the call stack
       - [Concurrency model and the event loop](https://developer.mozilla.org/en-US/docs/Web/JavaScript/EventLoop)
@@ -62,7 +64,7 @@
   - Higher order functions call other functions depending on some conditions
   - Example
       ```javascript
-      doSomething (successCB,failureCB) {
+      doSomething (successCB, failureCB) {
         let result = doLongComputation();
         if (result) successCB(); //called as function
         else failureCB();
@@ -98,6 +100,7 @@
   - Custom API library with smilar functionality to fetch
     - can be used on most browsers - provides good backward compatibility
     - also works on nodejs
+    - not part of the built-in library: need to include a seperate JavaScript library
   - [Axios or Fetch API](https://blog.logrocket.com/axios-or-fetch-api/)
 
 #### Existing APIs we can use
@@ -127,11 +130,11 @@
 ##### Points
 * if `await` is not used `async update()` is not required (when using chained `then`)
 * partial data returned on `fetch` can show how much of a file is downloaded (progress)
-* AJAX (`XMLHttpRequest`) is an old API, fetch is a new API with lots of features
-* future in Dart is like fetch in JavaScript
+* AJAX (`XMLHttpRequest`) is an old API, `fetch` is a new API with lots of features
+* `future` in Dart is like `fetch` in JavaScript
 
 ### Live session video
 [Week 5 Live session on Monday 24th Jan 2022](https://www.youtube.com/watch?v=1AeOkI5CzSs)
 
-### Screen cast REPLIT link
+### Screencast REPLIT link
 [REPLIT Screencast](https://replit.com/@constitution/MAD2Week5Screencasts)
